@@ -1,0 +1,6 @@
+select count(*)
+from "ANALYTICS"."DBT"."PLAYING_WITH_TESTS" 
+
+where C_MKTSEGMENT not in ('BUILDING','AUTOMOBILE','MACHINERY','HOUSEHOLD','FURNITURE')
+
+having count(*)>1
