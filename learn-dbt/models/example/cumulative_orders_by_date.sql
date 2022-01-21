@@ -1,3 +1,4 @@
+{{ config(materialized='view') }}
 
 select o1.o_orderdate
 , sum(o1.o_totalprice) over (order by o1.o_orderdate rows unbounded preceding) as cumulative_sales

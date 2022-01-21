@@ -1,3 +1,8 @@
 {{ config(materialized='table') }}
 
-select * from "SNOWFLAKE_SAMPLE_DATA"."TPCH_SF1000"."CUSTOMER"
+select
+c_custkey,
+c_mktsegment,
+{{rename_seg('c_mktsegment')}} as mk_adjusted
+FROM
+"SNOWFLAKE_SAMPLE_DATA"."TPCH_SF1"."CUSTOMER"
